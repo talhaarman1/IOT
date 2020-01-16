@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<!-- saved from url=(0052)http://getbootstrap.com/docs/4.0/examples/dashboard/ -->
+<html lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="http://getbootstrap.com/favicon.ico">
+
+    <title>IOT Robot</title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Custom styles for this template -->
+    <link href="css/toastr.min.css" rel="stylesheet">
+	<link href="css/dashboard.css" rel="stylesheet">
+  </head>
+
+  <body>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top bg-dark">
+      <a class="navbar-brand" href="#">Raspberry Pi IOT Robot</a>
+      <button class="navbar-toggler d-lg-none" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+         <!--  <li class="nav-item active">
+            <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+          </li> -->
+      
+        </ul>
+       <div>
+
+			<a href="login.html">Logout</a>
+ 
+	   </div>
+      </div>
+    </nav>
+
+    <div class="container-fluid">
+      <div class="row">
+        <main class="col" role="main">
+		<h1 style="padding-top:15px; text-align: center;" > Internet of Things Based Surveillance Robot</h1>
+<div class="container-fluid"
+			<div class="container-fluid">
+			
+<h2 style="padding-top:15px;">Contol Component</h2>
+		  <p>Control the Robot Component functions by pressing below buttons</p>
+		  <hr />
+			<div class="row">
+			<div class="col"></div>
+				<div class="col"><button onclick="LedOn()" type="button" class="btn btn-info w-100">LED On</button>
+				</div>
+				<div class="col"><button onclick="HornOn()" type="button" class="btn btn-info w-100">Horn On</button>
+				</div>
+				<div class="col"><button onclick="FanOn()" type="button" class="btn btn-info w-100">Fan On</button></div>
+				<div class="col"></div>
+			</div>
+			<div class="row" style="padding-top:20px;">
+			<div class="col"></div>
+				<div class="col"><button onclick="LedOff()" type="button" class="btn btn-info w-100">LED Off</button>
+				</div>
+				
+				<div class="col"><button onclick="HornOff()" type="button" class="btn btn-info w-100">Horn Off</button>
+				</div>
+				<div class="col"><button onclick="FanOff()" type="button" class="btn btn-info w-100">Fan Off</button></div>
+				<div class="col"></div>
+			</div>
+			</div>
+
+          <h2 style="padding-top:15px;">Movements Control</h2>
+		  <p>Control the Robot and camera movement by pressing below buttons</p>
+		  <hr />
+		  <div class="row">
+		  	<div class="col"><button onclick="Angle0()" type="button" class="btn btn-info w-100">Angle 0</button></div>
+		  	<div class="col"><button onclick="Angle45()" type="button" class="btn btn-info w-100">Angle 45</button></div>
+		  	<div class="col"><button onclick="Angle90()" type="button" class="btn btn-info w-100">Angle 90/button></div>
+		  	<div class="col"><button onclick="Angle175()" type="button" class="btn btn-info w-100">Angle 175</button></div>
+		  	<div class="col"><button onclick="Angle180()" type="button" class="btn btn-info w-100">Angle 180</button></div>
+		  </div>
+		  <div class="row" style="padding-top: 20px;">
+			<div class="col text-center">
+			  <img id="streamimg" class="img-responsive img-rounded" src= "http://192.168.10.15:8081?action=stream" />
+			</div>
+			</div>
+			<div class="row" style="padding-top:20px;">
+				<div class="col">
+				</div>
+				<div class="col"><button onclick="Forward()" type="button" class="btn btn-primary w-100">Forward</button>
+				</div>
+				<div class="col">
+				</div>
+			</div>
+			<div class="row" style="padding-top:20px;">
+				<div class="col"></div>
+				<div class="col"><button onclick="Left()" type="button" class="btn btn-primary w-100">Left</button>
+				</div>
+
+				<div class="col"><button onclick="Brake()" type="button" class="btn btn-danger w-100">Brake</button>
+				</div>
+				
+				<div class="col"><button onclick="Right()" type="button" class="btn btn-primary w-100">Right</button>
+				</div>
+				<div class="col"></div>
+			</div>
+			<div class="row" style="padding-top:20px;">
+				<div class="col"></div>
+				<div class="col"><button onclick="Reverse()" type="button" class="btn btn-primary w-100">Reverse</button>
+				</div>
+				<div class="col"></div>
+			</div>
+	
+			
+			
+			
+			
+			<h2 style="padding-top:15px;">Sensor Data</h2>
+			<p>Get the sensor reading by pressing below button</p>
+			<hr/>
+			<div class="row" style="padding-top:20px;">
+				<div class="col"></div>
+							<div class="col"><button onclick="FrontSensor()" type="button" class="btn btn-info w-100">Front distance Reading</button>
+				</div>
+				<div class="col">
+					<button onclick="Humidity()" type="button" class="btn btn-info w-100">Humidity Reading</button>
+				</div>
+				<div class="col"></div>
+			</div>
+			<div class="row" style="padding-top:20px;">
+				<div class="col"></div>
+				<div class="col"><button onclick="AllSideSensor()" type="button" class="btn btn-info w-100">All Side distance Reading</button>
+				</div>
+				<div class="col">
+					<button onclick="Temperature()" type="button" class="btn btn-info w-100">Temperature Reading</button>
+				</div>
+				<div class="col"></div>
+			</div>
+			</div>
+		</div>
+             
+        </main>
+      </div>
+	  
+	      <div class="container-fluid">
+      <div class="row">
+        <main class="col" role="main" style="background:black; margin-top:50px; color:white;padding-left:20px;">
+			<div>Response Logs:
+			</div>
+		<div id="response"  style="height:200px;overflow-y:auto;">
+		</div>
+		  </main>
+      </div>
+	  			
+	  </div>
+
+    </div>
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+
+	<script src="js/jquery-3.2.1.min.js"></script>
+    <script src="js/popper.min.js.download"></script>
+    <script src="js/bootstrap.min.js.download"></script>
+	<script src="js/toastr.min.js"></script>
+    <!-- IE10 viewport hack for Surface/desktop Windows 8 bug -->
+    <script src="js/ie10-viewport-bug-workaround.js.download"></script>
+	<script src="js/global.js"></script>
+    <script src="js/custom.js"></script>
+
+</body></html>
